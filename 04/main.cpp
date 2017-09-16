@@ -42,6 +42,8 @@ void pollEvents(sf::RenderWindow &window, sf::ConvexShape &pointer)
         case sf::Event::MouseMoved:
             onMouseMove(pointer, event.mouseMove);
             break;
+        default:
+            break;
         }
     }
 }
