@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
 #include <SFML/System.hpp>
+#include <SFML/Window.hpp>
 
 int main()
 {
@@ -8,14 +8,14 @@ int main()
     constexpr unsigned WINDOW_HEIGHT = 600;
     constexpr float BALL_SIZE = 40;
 
-    sf::RenderWindow window(sf::VideoMode({WINDOW_WIDTH, WINDOW_HEIGHT}), "title");
+    sf::RenderWindow window(sf::VideoMode({ WINDOW_WIDTH, WINDOW_HEIGHT }), "Moving Ball");
     sf::Clock clock;
 
     sf::CircleShape shape(BALL_SIZE);
-    shape.setPosition({200, 120});
+    shape.setPosition({ 200, 120 });
     shape.setFillColor(sf::Color(0xFF, 0xFF, 0xFF));
 
-    sf::Vector2f speed = {100.f, 100.f};
+    sf::Vector2f speed = { 100.f, 100.f };
 
     while (window.isOpen())
     {
@@ -33,11 +33,19 @@ int main()
         sf::Vector2f position = shape.getPosition();
         position += speed * dt;
 
-        if ((position.x + 2 * BALL_SIZE >= WINDOW_WIDTH) || (position.x < 0))
+        if ((position.x + 2 * BALL_SIZE >= WINDOW_WIDTH) && (speed.x > 0))
         {
             speed.x = -speed.x;
         }
-        if ((position.y + 2 * BALL_SIZE >= WINDOW_HEIGHT) || (position.y < 0))
+        if ((position.x < 0) && (speed.x < 0))
+        {
+            speed.x = -speed.x;
+        }
+        if ((position.y + 2 * BALL_SIZE >= WINDOW_HEIGHT) && (speed.y > 0))
+        {
+            speed.y = -speed.y;
+        }
+        if ((position.y < 0) && (speed.y < 0))
         {
             speed.y = -speed.y;
         }

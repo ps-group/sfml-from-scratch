@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
 #include <SFML/System.hpp>
+#include <SFML/Window.hpp>
 #include <cmath>
 
 constexpr unsigned WINDOW_WIDTH = 800;
@@ -16,29 +16,29 @@ sf::Vector2f getBallOffset(float time)
     const float wavePhase = time * float(2 * M_PI);
     const float y = amplitudeY * std::sin(wavePhase / periodY);
 
-    return {x, y};
+    return { x, y };
 }
 
-sf::Vector2f invertY(const sf::Vector2f &value)
+sf::Vector2f invertY(const sf::Vector2f& value)
 {
-    return {value.x, -value.y};
+    return { value.x, -value.y };
 }
 
 int main()
 {
     constexpr float BALL_SIZE = 40;
 
-    sf::RenderWindow window(sf::VideoMode({WINDOW_WIDTH, WINDOW_HEIGHT}), "title");
+    sf::RenderWindow window(sf::VideoMode({ WINDOW_WIDTH, WINDOW_HEIGHT }), "Sinusoid Motion");
     sf::Clock clock;
 
-    const sf::Vector2f position1 = {10, 250};
-    const sf::Vector2f position2 = {10, 350};
+    const sf::Vector2f position1 = { 10, 250 };
+    const sf::Vector2f position2 = { 10, 350 };
 
     sf::CircleShape ball1(BALL_SIZE);
-    ball1.setFillColor(sf::Color(0xFF, 0xFF, 0xFF));
+    ball1.setFillColor(sf::Color(0x80, 0x20, 0xFF));
 
     sf::CircleShape ball2(BALL_SIZE);
-    ball2.setFillColor(sf::Color(0xFF, 0xFF, 0xFF));
+    ball2.setFillColor(sf::Color(0xFF, 0xFF, 0x20));
 
     while (window.isOpen())
     {

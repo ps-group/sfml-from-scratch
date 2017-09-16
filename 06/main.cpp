@@ -17,7 +17,7 @@ int main()
     // Объявляем фигуру, которая будет выглядеть как эллипс
     sf::ConvexShape ellipse;
     ellipse.setPosition({ 400, 320 });
-    ellipse.setFillColor(sf::Color(0xFF, 0xFF, 0xFF));
+    ellipse.setFillColor(sf::Color(0x40, 0xFF, 0x8F));
 
     // Инициализируем вершины псевдо-эллипса.
     ellipse.setPointCount(pointCount);

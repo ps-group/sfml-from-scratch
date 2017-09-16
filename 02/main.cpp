@@ -1,16 +1,16 @@
 #include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
 #include <SFML/System.hpp>
+#include <SFML/Window.hpp>
 
 int main()
 {
-    const sf::Vector2f speed = {20.f, 10.f};
+    const sf::Vector2f speed = { 20.f, 10.f };
 
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "title");
+    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "Moving Ball");
     sf::Clock clock;
 
     sf::CircleShape shape(40);
-    shape.setPosition({200, 120});
+    shape.setPosition({ 200, 120 });
     shape.setFillColor(sf::Color(0xFF, 0xFF, 0xFF));
 
     while (window.isOpen())
