@@ -6,9 +6,11 @@ int main()
 {
     constexpr unsigned WINDOW_WIDTH = 800;
     constexpr unsigned WINDOW_HEIGHT = 600;
-    constexpr float BALL_SIZE = 40;
+    constexpr float BALL_SIZE = 10;
 
-    sf::RenderWindow window(sf::VideoMode({ WINDOW_WIDTH, WINDOW_HEIGHT }), "Moving Ball");
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
+    sf::RenderWindow window(sf::VideoMode({ WINDOW_WIDTH, WINDOW_HEIGHT }), "Moving Ball", sf::Style::Default, settings);
     sf::Clock clock;
 
     sf::CircleShape shape(BALL_SIZE);

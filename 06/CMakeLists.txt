@@ -7,7 +7,7 @@ find_package(JPEG)
 find_package(SFML 2 COMPONENTS window graphics system)
 
 target_compile_features(06 PUBLIC cxx_std_17)
-add_compile_options(06 PRIVATE "-pthread")
+add_compile_options(06 PRIVATE)
 target_compile_definitions(06 PRIVATE SFML_STATIC)
-target_link_libraries(06 PRIVATE pthread ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+target_link_libraries(06 PRIVATE ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 
