@@ -1,0 +1,11 @@
+textures: man_hero.png
+hero_jump_0.png	2	2	20	47	3	0	26	47	
+hero_walk_3.png	26	2	18	46	4	0	26	46	
+hero_walk_0.png	48	2	18	46	4	0	26	46	
+hero_idle_0.png	70	2	16	46	4	0	26	46	
+hero_walk_1.png	90	2	11	46	7	0	26	46	
+hero_walk_4.png	105	2	11	46	7	0	26	46	
+hero_walk_2.png	2	53	10	46	8	0	26	46	
+hero_walk_5.png	16	53	9	46	8	0	26	46	
+hero_jump_2.png	29	52	18	44	5	0	26	46	
+hero_jump_1.png	51	52	18	42	4	0	26	46	
